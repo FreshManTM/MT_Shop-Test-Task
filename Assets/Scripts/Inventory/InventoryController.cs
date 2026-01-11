@@ -4,11 +4,11 @@ using UnityEngine;
 
 public sealed class InventoryController : MonoBehaviour
 {
-    [SerializeField] List<InventoryItem> _items = new List<InventoryItem>();
-
     public IReadOnlyList<InventoryItem> Items => _items;
 
     public event Action OnInventoryChanged;
+
+    List<InventoryItem> _items = new List<InventoryItem>();
 
     public void AddItem(ItemDefinition itemDefinition)
     {

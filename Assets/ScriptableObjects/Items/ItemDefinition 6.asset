@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0779d5e1fd7d36c4884b5ed196571595, type: 3}
-  m_Name: ItemDefinition
+  m_Name: ItemDefinition 6
   m_EditorClassIdentifier: 
-  _itemName: Circle Item
-  _icon: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  _price: 100
+  _itemName: Bell Item
+  _icon: {fileID: 21300000, guid: 830164d71b9d60c40b606822b957d10b, type: 3}
+  _price: 500
   _effects:
+  - {fileID: 11400000, guid: 8f0e0f7d9e593a24f86382d3579a246d, type: 2}
   - {fileID: 11400000, guid: bb47823e9e24d2b47bc61a9bf4bde163, type: 2}
   _effectValue: 1

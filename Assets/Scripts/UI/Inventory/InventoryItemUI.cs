@@ -15,13 +15,23 @@ public class InventoryItemUI : MonoBehaviour
         _nameText.text = item.ItemDefinition.ItemName;
         _quantityText.text = $"Amount: x{item.Quantity}";
 
-        string bonusText = "";
-        if (item.ItemDefinition.ItemType == ItemType.PassiveIncome)
-            bonusText = $"+{item.TotalValue}/s";
-        else if (item.ItemDefinition.ItemType == ItemType.MoneyPerClick)
-            bonusText = $"+{item.TotalValue}/click";
-
-        _incomeText.text = $"Total bonus:\n{bonusText}";
+        _incomeText.text = BuildInventoryEffectText(item);
         _iconImage.sprite = item.ItemDefinition.Icon;
+    }
+
+    string BuildInventoryEffectText(InventoryItem item)
+    {
+        if (item.ItemDefinition.Effects.Count == 0)
+            return string.Empty;
+
+        System.Text.StringBuilder builder = new System.Text.StringBuilder();
+        builder.AppendLine("Total bonus:");
+
+        foreach (ItemEffect effect in item.ItemDefinition.Effects)
+        {
+            builder.AppendLine(effect.GetTotalValueString(item));
+        }
+
+        return builder.ToString().TrimEnd();
     }
 }

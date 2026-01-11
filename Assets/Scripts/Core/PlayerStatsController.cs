@@ -39,6 +39,16 @@ public sealed class PlayerStatsController: MonoBehaviour
         _inventoryController.OnInventoryChanged -= RecalculateStats;
     }
 
+    public void AddMoneyPerClick(int value)
+    {
+        MoneyPerClickFlat += value;
+    }
+
+    public void AddPassiveIncome(int value)
+    {
+        PassiveIncomeFlat += value;
+    }
+
     void RecalculateStats()
     {
         MoneyPerClickFlat = _defaultMoneyPerClick;
@@ -46,11 +56,8 @@ public sealed class PlayerStatsController: MonoBehaviour
 
         foreach (var item in _inventoryController.Items)
         {
-            if (item.ItemDefinition.ItemType == ItemType.MoneyPerClick)
-                MoneyPerClickFlat += item.ItemDefinition.Value * item.Quantity;
-
-            if (item.ItemDefinition.ItemType == ItemType.PassiveIncome)
-                PassiveIncomeFlat += item.ItemDefinition.Value * item.Quantity;
+            foreach (var effect in item.ItemDefinition.Effects)
+                effect.Apply(this, item);
         }
 
         ApplyMilestones();

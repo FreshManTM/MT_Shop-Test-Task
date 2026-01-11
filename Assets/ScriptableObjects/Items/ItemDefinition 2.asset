@@ -15,5 +15,6 @@ MonoBehaviour:
   _itemName: Square Item
   _icon: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   _price: 300
-  _itemType: 1
+  _effects:
+  - {fileID: 11400000, guid: bb47823e9e24d2b47bc61a9bf4bde163, type: 2}
   _effectValue: 3

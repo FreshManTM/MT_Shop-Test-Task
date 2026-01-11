@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(
@@ -15,8 +16,8 @@ public sealed class ItemDefinition : ScriptableObject
     [Header("Economy")]
     [SerializeField] int _price;
 
-    [Header("Type")]
-    [SerializeField] ItemType _itemType;
+    [Header("Effect")]
+    [SerializeField] List<ItemEffect> _effects;
 
     [Header("Values")]
     [SerializeField] int _effectValue;
@@ -24,6 +25,6 @@ public sealed class ItemDefinition : ScriptableObject
     public string ItemName => _itemName;
     public Sprite Icon => _icon;
     public int Price => _price;
-    public ItemType ItemType => _itemType;
     public int Value => _effectValue;
+    public IReadOnlyList<ItemEffect> Effects => _effects;
 }

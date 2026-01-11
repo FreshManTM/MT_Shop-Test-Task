@@ -33,16 +33,27 @@ public class ShopItemUI : MonoBehaviour
         _nameText.text = item.ItemName;
         _priceText.text = $"Price: {item.Price}$";
 
-        if(item.ItemType == ItemType.PassiveIncome)
-            _incomeText.text = $"+{item.Value}/s";
-        else if (item.ItemType == ItemType.MoneyPerClick)
-                _incomeText.text = $"+{item.Value}/click";
+        _incomeText.text = BuildShopEffectText(item);
         _iconImage.sprite = item.Icon;
         _buttonAction = buttonAction;
 
         _buyButton.onClick.RemoveAllListeners();
 
         _buyButton.onClick.AddListener(OnButtonClicked);
+    }
+    string BuildShopEffectText(ItemDefinition item)
+    {
+        if (item.Effects.Count == 0)
+            return string.Empty;
+
+        System.Text.StringBuilder builder = new System.Text.StringBuilder();
+
+        foreach (ItemEffect effect in item.Effects)
+        {
+            builder.AppendLine(effect.GetValueString(item));
+        }
+
+        return builder.ToString().TrimEnd();
     }
 
     void OnButtonClicked()
