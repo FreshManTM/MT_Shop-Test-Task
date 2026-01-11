@@ -47,6 +47,7 @@ public sealed class ButtonFeedback : MonoBehaviour,
     }
     void OnDisable()
     {
+        StopAllCoroutines();
         transform.localScale = _defaultScale;
     }
 

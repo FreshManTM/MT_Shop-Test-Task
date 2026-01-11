@@ -15,5 +15,5 @@ MonoBehaviour:
   _itemName: Circle Item
   _icon: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   _price: 100
-  _itemType: 0
-  _value: 1
+  _itemType: 1
+  _effectValue: 1

@@ -30,7 +30,7 @@ public sealed class PassiveIncomeController : MonoBehaviour
         {
             yield return wait;
 
-            int income = _playerStatsController.PassiveIncomePerSecond;
+            int income = _playerStatsController.FinalPassiveIncome;
             if (income > 0)
             {
                 _currencyController.Add(income);

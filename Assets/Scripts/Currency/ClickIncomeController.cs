@@ -14,7 +14,7 @@ public sealed class ClickIncomeController : MonoBehaviour
 
     public void RegisterClick()
     {
-        int income = _playerStatsController.MoneyPerClick;
+        int income = _playerStatsController.FinalMoneyPerClick;
 
         if (income > 0)
         {
