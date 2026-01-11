@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0779d5e1fd7d36c4884b5ed196571595, type: 3}
   m_Name: ItemDefinition
   m_EditorClassIdentifier: 
-  _id: circle
   _itemName: Circle Item
   _icon: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  _description: This is just rounded circle
   _price: 100
-  _passiveIncomePerSecond: 1
+  _itemType: 0
+  _value: 1

@@ -8,6 +8,7 @@ public sealed class InventoryItem
 
     public ItemDefinition ItemDefinition => _itemDefinition;
     public int Quantity => _quantity;
+    public int TotalValue => _itemDefinition.Value * _quantity;
 
     public InventoryItem(ItemDefinition itemDefinition)
     {

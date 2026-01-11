@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0779d5e1fd7d36c4884b5ed196571595, type: 3}
   m_Name: ItemDefinition 2
   m_EditorClassIdentifier: 
-  _id: square
   _itemName: Square Item
   _icon: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  _description: This is the coolest item.
   _price: 300
-  _passiveIncomePerSecond: 3
+  _itemType: 0
+  _value: 3

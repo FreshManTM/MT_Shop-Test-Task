@@ -10,9 +10,6 @@ public sealed class InventoryController : MonoBehaviour
 
     public event Action OnInventoryChanged;
 
-    /// <summary>
-    /// Adds an item to inventory. Increases quantity if already exists.
-    /// </summary>
     public void AddItem(ItemDefinition itemDefinition)
     {
         if (itemDefinition == null)
@@ -32,16 +29,4 @@ public sealed class InventoryController : MonoBehaviour
         OnInventoryChanged?.Invoke();
     }
 
-    /// <summary>
-    /// Returns total passive income from all owned items.
-    /// </summary>
-    public int GetTotalPassiveIncome()
-    {
-        int total = 0;
-        foreach (var item in _items)
-        {
-            total += item.ItemDefinition.PassiveIncomePerSecond * item.Quantity;
-        }
-        return total;
-    }
 }
